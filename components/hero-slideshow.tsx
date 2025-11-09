@@ -9,13 +9,13 @@ export function HeroSlideshow() {
 
   const slides = [
     {
-      image: "/quran-learning-children-islamic-classroom.jpg",
+      image: "/img1.jpg",
       title: "Qur'an & Sunnah for Children",
       subtitle: "Build a strong foundation in Islamic knowledge",
       cta: "Learn More",
     },
     {
-      image: "/islamic-diploma-advanced-students-study.jpg",
+      image: "/img1.jpg",
       title: "Islamic Diploma Program",
       subtitle: "Advanced studies in Fiqh, Aqeedah & Tafsir",
       cta: "Explore Diploma",
