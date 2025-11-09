@@ -8,33 +8,41 @@ export default function DiplomaPage() {
     {
       name: "Semester 1",
       courses: [
-        { name: "Introduction to Qur'an Studies", hours: "40 hours" },
-        { name: "Fundamentals of Islamic Creed (Aqeedah)", hours: "40 hours" },
-        { name: "Islamic Ethics & Manners", hours: "30 hours" },
+        { name: "Introduction to Islamic Theology (Aqeedah)" },
+        { name: "Fundamentals of Islamic Jurisprudence (Fiqh)" },
+        { name: "Quranic Sciences (Ulum al-Qur'an) with Tafsir of Surah Yusuf and Surah Qasas" },
+        { name: "Islamic History (Seerah of Prophet Muhammad PBUH)" },
+        { name: "Arabic Language Basics" },
+        { name: "Qur'an reading, writing and memorisation" },
+        { name: "Introduction to Hadeeth and its Sciences" },
       ],
     },
     {
       name: "Semester 2",
       courses: [
-        { name: "Tafsir - Selected Surahs", hours: "40 hours" },
-        { name: "Hadith Sciences & Selected Collections", hours: "40 hours" },
-        { name: "Islamic Jurisprudence Basics", hours: "35 hours" },
+        { name: "Advanced Islamic Jurisprudence (Fiqh II)" },
+        { name: "Hadith Studies (Ulum al-Hadith) and 40 Hadith Imam Nawawi" },
+        { name: "Ethics and Morality in Islam (Akhlaq)" },
+        { name: "Principles of Tafsir (Qur'anic Exegesis) and Surah Kahf and summary of Surah Baqarah" },
+        { name: "Arabic Language and Grammar (Nahw and Sarf)" },
       ],
     },
     {
-      name: "Semester 3",
+      name: "Semester 3 - Advanced Studies",
       courses: [
-        { name: "Advanced Tafsir Studies", hours: "45 hours" },
-        { name: "Fiqh - Pillars of Islam", hours: "45 hours" },
-        { name: "Seerah - Life of the Prophet", hours: "40 hours" },
+        { name: "Comparative Fiqh and Hadeeth" },
+        { name: "Islamic Finance and Economics" },
+        { name: "Contemporary Issues in Islam" },
+        { name: "Research Methodology in Islamic Studies" },
       ],
     },
     {
-      name: "Semester 4",
+      name: "Semester 4 - Capstone Project and Specialisation",
       courses: [
-        { name: "Islamic Jurisprudence - Advanced", hours: "45 hours" },
-        { name: "Qur'anic Linguistics & Grammar", hours: "40 hours" },
-        { name: "Contemporary Islamic Issues", hours: "35 hours" },
+        { name: "Further Advanced Fiqh" },
+        { name: "6 Books of Hadeeth (Specific chapters comprehensive study of Sanad and Takhreej)" },
+        { name: "Independent Research and Dissertation" },
+        { name: "Community Outreach and Da'wah training including Jumu'ah placements" },
       ],
     },
   ]
@@ -46,9 +54,9 @@ export default function DiplomaPage() {
         {/* Page Header */}
         <section className="w-full bg-primary text-primary-foreground py-12 sm:py-16">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-4xl font-bold">Islamic Diploma Program</h1>
+            <h1 className="text-4xl font-bold">Islamic Diploma Course Outline</h1>
             <p className="text-lg opacity-90 mt-2">
-              Comprehensive advanced Islamic studies for adults and older students
+              Comprehensive advanced Islamic studies
             </p>
           </div>
         </section>
@@ -67,38 +75,36 @@ export default function DiplomaPage() {
                     <BookMarked className="text-secondary flex-shrink-0 mt-1" size={20} />
                     <div>
                       <p className="font-semibold text-foreground">Duration</p>
-                      <p className="text-foreground/70">4 semesters (1 year comprehensive program)</p>
+                      <p className="text-foreground/70">4 semesters (2 years comprehensive program)</p>
                     </div>
                   </li>
                   <li className="flex gap-4 items-start">
                     <Award className="text-secondary flex-shrink-0 mt-1" size={20} />
                     <div>
-                      <p className="font-semibold text-foreground">Total Hours</p>
-                      <p className="text-foreground/70">Approximately 450+ hours of structured study</p>
+                      <p className="font-semibold text-foreground">Certifications</p>
+                      <p className="text-foreground/70">Accredited Diploma in Islamic Studies</p>
                     </div>
                   </li>
                   <li className="flex gap-4 items-start">
                     <CheckCircle2 className="text-secondary flex-shrink-0 mt-1" size={20} />
                     <div>
                       <p className="font-semibold text-foreground">Format</p>
-                      <p className="text-foreground/70">Structured modules with rigorous assessments</p>
+                      <p className="text-foreground/70">Lectures, Interactive Discussions, Group Work and Guest Speakers</p>
                     </div>
                   </li>
                   <li className="flex gap-4 items-start">
                     <Users className="text-secondary flex-shrink-0 mt-1" size={20} />
                     <div>
-                      <p className="font-semibold text-foreground">Subjects Covered</p>
-                      <p className="text-foreground/70">Qur'an, Hadith, Fiqh, Aqeedah, Tafsir, Seerah & more</p>
+                      <p className="font-semibold text-foreground">Progression</p>
+                      <p className="text-foreground/70">Intercalate to the Barchelor's Degree in Islamic Studies</p>
                     </div>
                   </li>
                 </ul>
               </div>
               <div className="bg-gradient-to-br from-primary/10 to-secondary/5 rounded-lg p-8 border border-primary/20">
                 <p className="text-foreground/85 leading-relaxed text-pretty font-medium">
-                  Our Islamic Diploma program is designed for dedicated students seeking deep, comprehensive knowledge
-                  of Islamic sciences. Combining rigorous theoretical understanding with practical application, this
-                  program prepares students to become knowledgeable contributors to their communities, equipped with
-                  authentic Islamic wisdom.
+                  The Islamic Diploma Course is designed to provide students with a foundational understanding of Islamic studies, including theology, jurisprudence, history and spirituality. 
+                  The program is structured to cater to students from various backgrounds including those already in full time education offering a flexible yet comprehensive approach to Islamic education.
                 </p>
               </div>
             </div>
@@ -128,7 +134,6 @@ export default function DiplomaPage() {
                     {semester.courses.map((course, i) => (
                       <div key={i} className="pb-4 border-b border-border/50 last:border-b-0">
                         <p className="font-semibold text-foreground">{course.name}</p>
-                        <p className="text-sm text-secondary font-medium mt-1">{course.hours}</p>
                       </div>
                     ))}
                   </div>
