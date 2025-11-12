@@ -7,48 +7,34 @@ export default function CoursesPage() {
   const courses = [
     {
       id: 1,
-      title: "Qur'an Learning",
+      title: "Qur'an for Beginners",
       description:
-        "Our Qur'an classes focus on correct recitation (Tajweed), memorisation (Hifz), and understanding the meanings and lessons from the Qur'an.",
+        "Our Qur'an classes focus on correct recitation (Tajweed) and understanding the meanings and lessons from the Qur'an.",
       icon: BookOpen,
       highlights: [
         "Tajweed (Correct Recitation)",
-        "Hifz (Memorisation Programs)",
         "Understanding & Reflection (Tadabur)",
-        "Age-appropriate classes",
+        "Beginners",
       ],
     },
     {
       id: 2,
-      title: "Hadith & Seerah Studies",
+      title: "Hifz and Islamic Studies",
       description:
-        "Children learn selected Hadiths and the life of the Prophet ﷺ to strengthen their connection with the Sunnah and apply it in practical ways.",
-      icon: Heart,
-      highlights: [
-        "Selected Hadith collections",
-        "Life of Prophet Muhammad ﷺ",
-        "Practical application of Sunnah",
-        "Character building through examples",
-      ],
-    },
-    {
-      id: 3,
-      title: "Islamic Manners & Values (Adab & Akhlaaq)",
-      description:
-        "We place great emphasis on character development, helping children embody the morals and ethics of a practicing Muslim.",
+        "Our Qur'an classes focus on correct recitation (Tajweed), memorisation (Hifz) and understanding the meanings and lessons from the Qur'an.",
       icon: Users,
       highlights: [
-        "Moral and ethical development",
-        "Islamic etiquette",
+        "Hifz (Memorisation Programs)",
+        "Tajweed (Correct Recitation)",
         "Family values and respect",
         "Community responsibility",
       ],
     },
     {
-      id: 4,
-      title: "Islamic Diploma Programs",
+      id: 3,
+      title: "Diploma in Islamic Studies",
       description:
-        "For older students and adults seeking structured and advanced knowledge, our Islamic Diploma programs cover essential subjects such as Fiqh, Aqeedah, Tafsir, and more.",
+        "For older students and adults seeking structured and advanced knowledge, our Islamic Diploma programs cover essential subjects such as Fiqh, Aqeedah, Tafsir and more.",
       icon: Award,
       highlights: [
         "Fiqh (Islamic Jurisprudence)",
