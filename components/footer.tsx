@@ -25,7 +25,7 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/diploma" className="hover:text-secondary transition-colors">
+                <Link href="/courses#diploma" className="hover:text-secondary transition-colors">
                   Islamic Diploma
                 </Link>
               </li>
