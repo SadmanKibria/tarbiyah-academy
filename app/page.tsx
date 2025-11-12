@@ -10,25 +10,19 @@ import { BookOpen, Heart, Users, Award, CheckCircle2, ChevronRight } from "lucid
 export default function Home() {
   const courses = [
     {
-      title: "Qur'an & Sunnah for Children",
-      description: "Correct recitation, memorisation, and understanding of the Qur'an with authentic Sunnah teachings",
+      title: "Qur'an for Beginners",
+      description: "Our Qur'an classes focus on correct recitation (Tajweed) and understanding the meanings and lessons from the Qur'an",
       icon: BookOpen,
       href: "/courses",
     },
     {
-      title: "Hadith & Seerah Studies",
-      description: "Learn selected Hadiths and the inspiring life of the Prophet Muhammad ﷺ",
-      icon: Heart,
-      href: "/courses",
-    },
-    {
-      title: "Islamic Manners & Values",
-      description: "Character development and moral ethics deeply rooted in Islamic principles",
+      title: "Hifz and Islamic Studies",
+      description: "Our Qur'an classes focus on correct recitation (Tajweed), memorisation (Hifz) and understanding the meanings and lessons from the Qur'an",
       icon: Users,
       href: "/courses",
     },
     {
-      title: "Islamic Diploma Program",
+      title: "Diploma in Islamic Studies",
       description: "Advanced studies in Fiqh, Aqeedah, Tafsir, and comprehensive Islamic jurisprudence",
       icon: Award,
       href: "/diploma",
@@ -42,6 +36,7 @@ export default function Home() {
     "Strong emphasis on character & values",
     "Supportive community for students & parents",
     "Flexible learning pathways & progression",
+    "Segregated class for boys and girls",
   ]
 
   return (
@@ -64,18 +59,21 @@ export default function Home() {
                   <h2 className="text-4xl font-bold text-primary">Our Mission</h2>
                 </div>
                 <p className="text-foreground/80 leading-relaxed text-lg">
-                  To provide a strong foundation in faith, character, and practice, helping children grow into
+                  To provide a strong foundation in faith, character and practice, helping children grow into
                   confident, responsible Muslims who embody authentic Islamic teachings in their daily lives.
+                  <br>
+                    To nurture a generation of spiritually aware, morally upright Muslims, well-grounded in their Islamic
+                  identity and equipped to positively contribute to society while remaining steadfast in their faith.
+                  </br>
                 </p>
               </div>
               <div>
                 <div className="flex gap-3 mb-4 items-start">
                   <div className="w-1.5 h-10 bg-secondary rounded-full mt-1"></div>
-                  <h2 className="text-4xl font-bold text-primary">Our Vision</h2>
+                  <h2 className="text-4xl font-bold text-primary">Events</h2>
                 </div>
                 <p className="text-foreground/80 leading-relaxed text-lg">
-                  To nurture a generation of spiritually aware, morally upright Muslims, well-grounded in their Islamic
-                  identity and equipped to positively contribute to society while remaining steadfast in their faith.
+                  We organise various spiritual and educational events to strengthen faith and community. Visit this page regularly for updates on upcoming programs.
                 </p>
               </div>
             </div>
