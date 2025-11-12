@@ -10,8 +10,8 @@ export function Header() {
   const links = [
     { href: "/", label: "Home" },
     { href: "/courses", label: "Courses" },
-    { href: "/diploma", label: "Islamic Diploma" },
-    { href: "/enroll", label: "Enroll" },
+    { href: "/enroll", label: "Admission" },
+    { href: "/contact", label: "Contact" },
   ]
 
   return (
