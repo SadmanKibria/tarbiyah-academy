@@ -59,7 +59,7 @@ export default function Home() {
                   <h2 className="text-4xl font-bold text-primary">Our Mission</h2>
                 </div>
                 <p className="text-foreground/80 leading-relaxed text-lg">
-                  To build a strong foundation of faith, character and practice—helping children grow into confident, responsible Muslims who live by authentic Islamic teachings. 
+                  To build a strong foundation of faith, character and practice, helping children grow into confident, responsible Muslims who live by authentic Islamic teachings. 
                   We aim to nurture a generation that is spiritually aware, morally upright and deeply rooted in their Islamic identity, ready to contribute positively to society while remaining steadfast in their faith.
                 </p>
               </div>
@@ -69,7 +69,9 @@ export default function Home() {
                   <h2 className="text-4xl font-bold text-primary">Events</h2>
                 </div>
                 <p className="text-foreground/80 leading-relaxed text-lg">
-                  We organise various spiritual and educational events to strengthen faith and community. Visit this page regularly for updates on upcoming programs.
+                  We organise a variety of spiritual, educational and community-centered events designed to inspire, strengthen faith and bring people together. 
+                  Our programs include insightful talks, workshops and gatherings that encourage learning, reflection and connection. 
+                  Visit this page regularly to stay informed about upcoming events and opportunities to get involved.
                 </p>
               </div>
             </div>
