@@ -59,11 +59,8 @@ export default function Home() {
                   <h2 className="text-4xl font-bold text-primary">Our Mission</h2>
                 </div>
                 <p className="text-foreground/80 leading-relaxed text-lg">
-                  To provide a strong foundation in faith, character and practice, helping children grow into
-                  confident, responsible Muslims who embody authentic Islamic teachings in their daily lives.
-                  <br />
-                    To nurture a generation of spiritually aware, morally upright Muslims, well-grounded in their Islamic
-                  identity and equipped to positively contribute to society while remaining steadfast in their faith.
+                  To build a strong foundation of faith, character and practice—helping children grow into confident, responsible Muslims who live by authentic Islamic teachings. 
+                  We aim to nurture a generation that is spiritually aware, morally upright and deeply rooted in their Islamic identity, ready to contribute positively to society while remaining steadfast in their faith.
                 </p>
               </div>
               <div>
