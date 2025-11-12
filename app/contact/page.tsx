@@ -44,8 +44,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-bold text-foreground mb-1">Email</h3>
-                      <a href="mailto:info@tarbiyahacademy.com" className="text-primary hover:underline">
-                        info@tarbiyahacademy.com
+                      <a href="mailto:tarbiyah.ac@gmail.com" className="text-primary hover:underline">
+                        tarbiyah.ac@gmail.com
                       </a>
                     </div>
                   </div>
@@ -56,7 +56,9 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-bold text-foreground mb-1">Phone</h3>
-                      <p className="text-foreground/70">Contact us for phone number</p>
+                      <a href="tel:+447950206007" className="text-primary hover:underline">
+                        +44 7950 206007
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -73,7 +75,7 @@ export default function ContactPage() {
                     <span className="font-semibold text-foreground">Registered:</span> In England and Wales
                   </p>
                   <p>
-                    <span className="font-semibold text-foreground">Registration Number:</span> 14615563
+                    <span className="font-semibold text-foreground">Company Number:</span> 12671924
                   </p>
                   <p>
                     <span className="font-semibold text-foreground">Location:</span> Ilford, Essex
