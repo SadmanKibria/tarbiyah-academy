@@ -9,7 +9,7 @@ const geistMono = Geist_Mono({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Tarbiyah Academy - Islamic Education",
   description: "Nurturing young hearts and minds through authentic Islamic knowledge and values",
-    generator: 'v0.app'
+    generator: 'Sadman Kibria'
 }
 
 export default function RootLayout({
