@@ -61,10 +61,9 @@ export default function Home() {
                 <p className="text-foreground/80 leading-relaxed text-lg">
                   To provide a strong foundation in faith, character and practice, helping children grow into
                   confident, responsible Muslims who embody authentic Islamic teachings in their daily lives.
-                  <br>
+                  <br />
                     To nurture a generation of spiritually aware, morally upright Muslims, well-grounded in their Islamic
                   identity and equipped to positively contribute to society while remaining steadfast in their faith.
-                  </br>
                 </p>
               </div>
               <div>
