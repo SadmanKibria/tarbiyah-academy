@@ -62,7 +62,7 @@ export function Footer() {
 
         <div className="border-t border-primary-foreground/20 pt-8">
           <p className="text-center text-sm opacity-90 mb-2">
-            Tarbiyah Academy | Registered in England and Wales. Registration Number: 14615563
+            Durotech Limited. T/A Tarbiyah Academy | Registered in England and Wales. Company Number: 12671924
           </p>
           <p className="text-center text-xs opacity-75">
             &copy; 2025 All rights reserved. | Website designed by{" "}
