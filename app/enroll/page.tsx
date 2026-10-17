@@ -1,43 +1,9 @@
-"use client"
+import type { Metadata } from "next";
+import Link from "next/link";
+import { contact } from "@/lib/content";
 
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+export const metadata: Metadata = { title: "Enrol", description: "Start an application for Qur’an, Hifz, Islamic Studies or the Diploma in Islamic Studies at Tarbiyah Academy, Ilford.", alternates: { canonical: "/enroll" } };
 
 export default function EnrollPage() {
-  return (
-    <>
-      <Header />
-      <main className="w-full">
-        {/* Page Header */}
-        <section className="w-full bg-primary text-primary-foreground py-12 sm:py-16">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-4xl font-bold mb-2">Enrollment Form</h1>
-            <p className="text-lg opacity-90">Join Tarbiyah Academy and begin your Islamic learning journey</p>
-          </div>
-        </section>
-
-        {/* Form Section */}
-        <section className="w-full py-16 sm:py-24 bg-white">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white rounded-lg border border-border p-6 sm:p-8">
-              <div className="overflow-x-auto">
-                <iframe
-                  src="https://docs.google.com/forms/d/e/1FAIpQLSf0oiHxnixSQW_H7WNuiGskChvVSMr2GxgB2VgJekCqHqmZOg/viewform?embedded=true"
-                  width="100%"
-                  height="1822"
-                  frameBorder="0"
-                  marginHeight={0}
-                  marginWidth={0}
-                  className="min-h-screen w-full"
-                >
-                  Loading…
-                </iframe>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </>
-  )
+  return <section className="enrol-page"><div className="wrap enrol-grid"><div className="enrol-copy"><span className="eyebrow light">Enrolment</span><h1>The next step starts <em>here.</em></h1><p>Complete our short application form and a member of the Tarbiyah Academy team will get in touch to guide you.</p><ol><li><b>01</b><span><strong>Tell us about the student</strong>Share their current level and the pathway you are interested in.</span></li><li><b>02</b><span><strong>We review your application</strong>Our team checks the best fit and may contact you for more information.</span></li><li><b>03</b><span><strong>Begin the journey</strong>We will confirm the next steps, class information and start date.</span></li></ol><div className="enrol-help">Need help first? <a href={contact.whatsapp}>Message us on WhatsApp →</a></div></div><div className="form-card"><span>Online application</span><h2>Apply to Tarbiyah Academy</h2><p>The form opens securely in Google Forms and usually takes only a few minutes.</p><a href={contact.form} target="_blank" rel="noreferrer" className="button button-gold">Open application form <span>↗</span></a><small>By submitting the form, you agree that our team may contact you about your application.</small></div></div></section>;
 }

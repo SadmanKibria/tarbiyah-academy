@@ -1,118 +1,21 @@
-import Link from "next/link"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { BookOpen, Heart, Users, Award, ChevronRight } from "lucide-react"
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { CtaBand } from "@/components/CtaBand";
+import { courses } from "@/lib/content";
+
+export const metadata: Metadata = { title: "Qur’an, Hifz & Islamic Studies Courses", description: "Explore Qur’an, Tajweed, Hifz and Islamic Studies classes for children and young people at Tarbiyah Academy in Ilford.", alternates: { canonical: "/courses" } };
 
 export default function CoursesPage() {
-  const courses = [
-    {
-      id: 1,
-      title: "Qur'an for Beginners",
-      description:
-        "Our Qur'an classes focus on correct recitation (Tajweed) and understanding the meanings and lessons from the Qur'an.",
-      icon: BookOpen,
-      highlights: [
-        "Tajweed (Correct Recitation)",
-        "Understanding & Reflection (Tadabur)",
-        "Beginners",
-      ],
-    },
-    {
-      id: 2,
-      title: "Hifz and Islamic Studies",
-      description:
-        "Our Qur'an classes focus on correct recitation (Tajweed), memorisation (Hifz) and understanding the meanings and lessons from the Qur'an.",
-      icon: Users,
-      highlights: [
-        "Hifz (Memorisation Programs)",
-        "Tajweed (Correct Recitation)",
-        "Family values and respect",
-        "Community responsibility",
-      ],
-    },
-    {
-      id: 3,
-      title: "Diploma in Islamic Studies",
-      description:
-        "For older students and adults seeking structured and advanced knowledge, our Islamic Diploma programs cover essential subjects such as Fiqh, Aqeedah, Tafsir and more.",
-      icon: Award,
-      highlights: [
-        "Fiqh (Islamic Jurisprudence)",
-        "Aqeedah (Islamic Theology)",
-        "Tafsir (Qur'an Interpretation)",
-        "Advanced Islamic Studies",
-      ],
-    },
-  ]
-
-  return (
-    <>
-      <Header />
-      <main className="w-full">
-        {/* Page Header */}
-        <section className="w-full bg-primary text-primary-foreground py-12 sm:py-16">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-4xl font-bold">Our Courses</h1>
-            <p className="text-lg opacity-90 mt-2">Comprehensive Islamic education programs for all ages</p>
-          </div>
-        </section>
-
-        {/* Courses Grid */}
-        <section className="w-full py-16 sm:py-24 bg-white">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 gap-8">
-              {courses.map((course) => {
-                const Icon = course.icon
-                return (
-                  <div
-                    key={course.id}
-                    className="bg-card border border-border rounded-lg p-8 hover:shadow-xl hover:border-primary/50 transition-all duration-300 group"
-                  >
-                    <div className="flex gap-4 items-start mb-4">
-                      <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 group-hover:scale-110 transition-all">
-                        <Icon className="text-primary" size={28} />
-                      </div>
-                      <h3 className="font-bold text-xl text-foreground group-hover:text-primary transition-colors">
-                        {course.title}
-                      </h3>
-                    </div>
-                    <p className="text-foreground/70 mb-6 leading-relaxed">{course.description}</p>
-                    <div>
-                      <p className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                        Key Highlights
-                        <span className="w-1 h-4 bg-secondary rounded-full"></span>
-                      </p>
-                      <ul className="space-y-2">
-                        {course.highlights.map((highlight, i) => (
-                          <li key={i} className="flex gap-2 items-start text-foreground/70 text-sm">
-                            <span className="text-secondary font-bold mt-0.5">✓</span>
-                            <span>{highlight}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="w-full py-16 sm:py-20 bg-secondary/10">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold mb-6 text-primary">Choose Your Course Today</h2>
-            <Link
-              href="/enroll"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-bold py-3 px-8 rounded-lg hover:bg-primary/90 transition-all shadow-md hover:shadow-lg"
-            >
-              Enroll Now
-              <ChevronRight size={20} />
-            </Link>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </>
-  )
+  return <>
+    <section className="page-hero page-hero-courses"><div className="wrap"><span className="eyebrow light">Courses</span><h1>Find the right next step<br /><em>for their journey.</em></h1><p>Clear pathways from first letters to confident, lived Islamic knowledge.</p></div></section>
+    <section className="pathways section"><div className="wrap pathway-list">
+      {courses.slice(0, 2).map((course, index) => <article className="pathway" key={course.title}>
+        <div className="pathway-image"><Image src={course.image} alt={`${course.title} class`} fill sizes="(max-width: 850px) 100vw, 48vw" /></div>
+        <div className="pathway-copy"><span className="eyebrow">Pathway {course.number}</span><h2>{course.title}</h2><p className="lead">{course.description}</p><ul>{course.points.map(point => <li key={point}><span>✓</span>{point}</li>)}</ul><Link href="/enroll" className="button">Enquire about this course <span>↗</span></Link></div>
+      </article>)}
+    </div></section>
+    <section className="course-note"><div className="wrap"><span>Not sure which level?</span><p>That is completely fine. Tell us where your child is currently, and our team will help you choose the right starting point.</p><Link href="/contact" className="text-link light">Talk to our team <span>→</span></Link></div></section>
+    <CtaBand title="Give them a confident start." />
+  </>;
 }

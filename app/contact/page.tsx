@@ -1,120 +1,13 @@
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { MapPin, Mail, Phone } from "lucide-react"
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { contact } from "@/lib/content";
+
+export const metadata: Metadata = { title: "Contact & Visit", description: "Contact Tarbiyah Academy at 379 Oaklands Park Avenue, Ilford, IG1 1TG. Call, email or message our team about classes and enrolment.", alternates: { canonical: "/contact" } };
 
 export default function ContactPage() {
-  return (
-    <>
-      <Header />
-      <main className="w-full">
-        {/* Page Header */}
-        <section className="w-full bg-primary text-primary-foreground py-12 sm:py-16">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-4xl font-bold">Contact Us</h1>
-            <p className="text-lg opacity-90 mt-2">Get in touch with Tarbiyah Academy</p>
-          </div>
-        </section>
-
-        {/* Contact Information */}
-        <section className="w-full py-16 sm:py-24 bg-white">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 gap-12">
-              <div>
-                <h2 className="text-2xl font-bold text-primary mb-8">Get In Touch</h2>
-                <div className="space-y-6">
-                  <div className="flex gap-4 items-start">
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="text-primary" size={24} />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-foreground mb-1">Address</h3>
-                      <p className="text-foreground/70">
-                        379 Oaklands Park Avenue
-                        <br />
-                        Ilford, Essex, IG1 1TG
-                        <br />
-                        United Kingdom
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-4 items-start">
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Mail className="text-primary" size={24} />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-foreground mb-1">Email</h3>
-                      <a href="mailto:tarbiyah.ac@gmail.com" className="text-primary hover:underline">
-                        tarbiyah.ac@gmail.com
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-4 items-start">
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Phone className="text-primary" size={24} />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-foreground mb-1">Phone</h3>
-                      <a href="tel:+447950206007" className="text-primary hover:underline">
-                        +44 7950 206007
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-primary/5 rounded-lg p-8 border border-primary/10">
-                <h3 className="text-xl font-bold text-foreground mb-4">About Tarbiyah Academy</h3>
-                <p className="text-foreground/70 leading-relaxed mb-4">
-                  Tarbiyah Academy is a dedicated Islamic educational institution committed to nurturing young hearts
-                  and minds through authentic Islamic knowledge and values.
-                </p>
-                <div className="space-y-3 text-sm text-foreground/70">
-                  <p>
-                    <span className="font-semibold text-foreground">Registered:</span> In England and Wales
-                  </p>
-                  <p>
-                    <span className="font-semibold text-foreground">Company Number:</span> 12671924
-                  </p>
-                  <p>
-                    <span className="font-semibold text-foreground">Location:</span> Ilford, Essex
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Why Contact Us */}
-        <section className="w-full py-16 sm:py-24 bg-secondary/10">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl font-bold text-primary mb-8">How Can We Help?</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              {[
-                {
-                  title: "Course Inquiries",
-                  description: "Ask about our courses, programs, and educational offerings",
-                },
-                {
-                  title: "Enrollment Support",
-                  description: "Get help with the enrollment process or have questions about admission",
-                },
-                {
-                  title: "General Questions",
-                  description: "Contact us for any other questions or feedback",
-                },
-              ].map((item, i) => (
-                <div key={i} className="bg-white rounded-lg p-6 border border-border hover:shadow-lg transition-shadow">
-                  <h3 className="font-bold text-foreground mb-2">{item.title}</h3>
-                  <p className="text-foreground/70 text-sm">{item.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </>
-  )
+  return <>
+    <section className="contact-page section"><div className="wrap contact-grid"><div><span className="eyebrow">Contact us</span><h1>Let’s talk about<br /><em>their next step.</em></h1><p>Questions about a course, level or application? Our team is here to help.</p><div className="contact-list"><a href={`tel:${contact.phone}`}><span>Call</span><strong>{contact.phoneDisplay}</strong><b>↗</b></a><a href={contact.whatsapp}><span>WhatsApp</span><strong>Message our team</strong><b>↗</b></a><a href={`mailto:${contact.email}`}><span>Email</span><strong>{contact.email}</strong><b>↗</b></a></div></div><div className="visit-card"><div className="visit-image"><Image src="/images/personal-guidance.jpg" alt="Teacher supporting a Tarbiyah Academy student" fill sizes="(max-width: 850px) 100vw, 45vw" /></div><div><span className="eyebrow light">Visit us in Ilford</span><h2>{contact.address}</h2><a href={contact.maps} target="_blank" rel="noreferrer" className="button button-cream">Get directions <span>↗</span></a></div></div></div></section>
+    <section className="simple-cta"><div className="wrap"><h2>Already know you’re ready?</h2><Link href="/enroll" className="button button-gold">Start an application <span>↗</span></Link></div></section>
+  </>;
 }

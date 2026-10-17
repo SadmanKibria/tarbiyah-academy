@@ -1,155 +1,63 @@
-"use client"
+import Image from "next/image";
+import Link from "next/link";
+import { CtaBand } from "@/components/CtaBand";
+import { courses } from "@/lib/content";
 
-import Link from "next/link"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { HeroSlideshow } from "@/components/hero-slideshow"
-import { WhatsAppButton } from "@/components/whatsapp-button"
-import { BookOpen, Heart, Users, Award, CheckCircle2, ChevronRight } from "lucide-react"
+export default function HomePage() {
+  return <>
+    <section className="hero">
+      <Image src="/images/hero-classroom.jpg" alt="Young students learning Qur’an together at Tarbiyah Academy in Ilford" fill priority sizes="100vw" className="hero-image" />
+      <div className="hero-wash" />
+      <div className="wrap hero-content">
+        <div className="hero-copy">
+          <span className="eyebrow light">Qur’an · Knowledge · Character</span>
+          <h1>More than lessons.<br /><em>A foundation for life.</em></h1>
+          <p>Helping children and young people grow in faith, confidence and character—in a place where they feel they belong.</p>
+          <div className="hero-actions"><Link href="/enroll" className="button button-gold">Enrol your child <span>↗</span></Link><Link href="/courses" className="button button-ghost">Explore courses <span>↓</span></Link></div>
+        </div>
+        <div className="hero-note"><b>Ilford, East London</b><span>Learning rooted in faith.<br />Ready for the world.</span></div>
+      </div>
+      <div className="hero-proof"><div className="wrap proof-grid"><span><b>01</b> Structured learning</span><span><b>02</b> Caring teachers</span><span><b>03</b> Faith in practice</span></div></div>
+    </section>
 
-export default function Home() {
-  const courses = [
-    {
-      title: "Qur'an for Beginners",
-      description: "Our Qur'an classes focus on correct recitation (Tajweed) and understanding the meanings and lessons from the Qur'an",
-      icon: BookOpen,
-      href: "/courses",
-    },
-    {
-      title: "Hifz and Islamic Studies",
-      description: "Our Qur'an classes focus on correct recitation (Tajweed), memorisation (Hifz) and understanding the meanings and lessons from the Qur'an",
-      icon: Users,
-      href: "/courses",
-    },
-    {
-      title: "Diploma in Islamic Studies",
-      description: "Advanced studies in Fiqh, Aqeedah, Tafsir, and comprehensive Islamic jurisprudence",
-      icon: Award,
-      href: "/diploma",
-    },
-  ]
+    <section className="intro section" id="approach">
+      <div className="wrap intro-grid">
+        <div><span className="eyebrow">Our approach</span><h2>We teach the whole child, <em>not just the page.</em></h2></div>
+        <div className="intro-copy"><p>Real Islamic education shapes how a young person thinks, behaves and shows up in the world. That is why every lesson at Tarbiyah connects knowledge to character.</p><Link href="/courses" className="text-link">Discover our learning pathways <span>→</span></Link></div>
+      </div>
+      <div className="wrap value-strip">
+        <article><span>01</span><div><h3>Know</h3><p>Build sound, age-appropriate Islamic knowledge.</p></div></article>
+        <article><span>02</span><div><h3>Love</h3><p>Nurture a living connection with Allah and His Book.</p></div></article>
+        <article><span>03</span><div><h3>Live</h3><p>Turn learning into excellent character and everyday action.</p></div></article>
+      </div>
+    </section>
 
-  const whyChoose = [
-    "Qualified & experienced Islamic educators",
-    "Faith-based, nurturing learning environment",
-    "Comprehensive, age-appropriate curriculum",
-    "Strong emphasis on character & values",
-    "Supportive community for students & parents",
-    "Flexible learning pathways & progression",
-    "Segregated class for boys and girls",
-  ]
+    <section className="courses-section section">
+      <div className="wrap section-heading"><div><span className="eyebrow">Learning pathways</span><h2>One journey.<br /><em>Every stage covered.</em></h2></div><p>From first letters to deeper Islamic scholarship, each pathway gives students a clear next step.</p></div>
+      <div className="wrap course-grid">
+        {courses.map((course, index) => <article className="course-card" key={course.title}>
+          <div className="course-image"><Image src={course.image} alt={`${course.title} at Tarbiyah Academy`} fill sizes="(max-width: 850px) 100vw, 33vw" /><span>{course.number}</span></div>
+          <div className="course-body"><small>{course.strapline}</small><h3>{course.title}</h3><p>{course.description}</p><ul>{course.points.map(point => <li key={point}>{point}</li>)}</ul><Link href={index === 2 ? "/diploma" : "/courses"} aria-label={`Learn more about ${course.title}`}>Explore pathway <span>↗</span></Link></div>
+        </article>)}
+      </div>
+    </section>
 
-  return (
-    <>
-      <Header />
-      <WhatsAppButton />
-      <main className="w-full">
-        {/* Hero Section */}
-        <section className="w-full px-4 sm:px-6 lg:px-8 py-8 sm:py-10 max-w-7xl mx-auto">
-          <HeroSlideshow />
-        </section>
+    <section className="story section">
+      <div className="wrap story-grid">
+        <div className="story-gallery">
+          <div className="image-tall"><Image src="/images/full-classroom.jpg" alt="A full Tarbiyah Academy classroom" fill sizes="(max-width: 850px) 50vw, 28vw" /></div>
+          <div className="image-stack"><div><Image src="/images/personal-guidance.jpg" alt="A teacher giving one-to-one guidance" fill sizes="(max-width: 850px) 50vw, 25vw" /></div><div><Image src="/images/youth-presentation.jpg" alt="Young students presenting to their class" fill sizes="(max-width: 850px) 50vw, 25vw" /></div></div>
+        </div>
+        <div className="story-copy"><span className="eyebrow light">A place to belong</span><h2>Serious learning.<br /><em>Warm community.</em></h2><p>Young people learn best when they feel seen, supported and inspired. Our classrooms make space for questions, friendship, reflection and real participation.</p><div className="quote">“We want every student to leave with knowledge in their mind, faith in their heart and confidence in who they are.”</div><Link href="/contact" className="text-link light">Come and meet us <span>→</span></Link></div>
+      </div>
+    </section>
 
-        {/* Mission & Vision */}
-        <section className="w-full py-16 sm:py-20 bg-gradient-to-b from-muted/50 to-background">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="flex gap-3 mb-4 items-start">
-                  <div className="w-1.5 h-10 bg-secondary rounded-full mt-1"></div>
-                  <h2 className="text-4xl font-bold text-primary">Our Mission</h2>
-                </div>
-                <p className="text-foreground/80 leading-relaxed text-lg">
-                  To build a strong foundation of faith, character and practice, helping children grow into confident, responsible Muslims who live by authentic Islamic teachings. 
-                  We aim to nurture a generation that is spiritually aware, morally upright and deeply rooted in their Islamic identity, ready to contribute positively to society while remaining steadfast in their faith.
-                </p>
-              </div>
-              <div>
-                <div className="flex gap-3 mb-4 items-start">
-                  <div className="w-1.5 h-10 bg-secondary rounded-full mt-1"></div>
-                  <h2 className="text-4xl font-bold text-primary">Events</h2>
-                </div>
-                <p className="text-foreground/80 leading-relaxed text-lg">
-                  We organise a variety of spiritual, educational and community-centered events designed to inspire, strengthen faith and bring people together. 
-                  Our programs include insightful talks, workshops and gatherings that encourage learning, reflection and connection. 
-                  Visit this page regularly to stay informed about upcoming events and opportunities to get involved.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Why Choose Us */}
-        <section className="w-full py-16 sm:py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-14">
-              <h2 className="text-4xl font-bold text-primary mb-4">Why Choose Tarbiyah Academy?</h2>
-              <div className="w-24 h-1 bg-secondary mx-auto rounded-full"></div>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {whyChoose.map((reason, i) => (
-                <div
-                  key={i}
-                  className="flex gap-4 items-start p-6 bg-muted/50 rounded-lg hover:shadow-md hover:bg-muted transition-all"
-                >
-                  <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-0.5" />
-                  <p className="text-foreground/85 font-medium">{reason}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Courses Overview */}
-        <section className="w-full py-16 sm:py-20 bg-muted/30">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-14">
-              <h2 className="text-4xl font-bold text-primary mb-4">Our Programs</h2>
-              <div className="w-24 h-1 bg-secondary mx-auto rounded-full"></div>
-            </div>
-            <div className="grid md:grid-cols-2 gap-8">
-              {courses.map((course, i) => {
-                const Icon = course.icon
-                return (
-                  <Link
-                    key={i}
-                    href={course.href}
-                    className="group bg-white border border-border rounded-lg p-8 hover:shadow-xl hover:border-primary/50 transition-all duration-300 cursor-pointer"
-                  >
-                    <div className="flex gap-4 items-start mb-4">
-                      <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
-                        <Icon className="text-primary" size={28} />
-                      </div>
-                      <h3 className="font-bold text-lg text-foreground mt-1 group-hover:text-primary transition-colors">
-                        {course.title}
-                      </h3>
-                    </div>
-                    <p className="text-foreground/70 leading-relaxed">{course.description}</p>
-                  </Link>
-                )
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="w-full py-16 sm:py-20 bg-primary text-primary-foreground">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-4xl font-bold mb-6 text-balance">Ready to Begin Your Journey?</h2>
-            <p className="text-lg opacity-95 mb-10 text-balance max-w-2xl mx-auto">
-              Join Tarbiyah Academy where Islamic knowledge meets character excellence. Enroll your child today and be
-              part of our learning community.
-            </p>
-            <Link
-              href="/enroll"
-              className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground font-bold py-3 px-8 rounded-lg hover:bg-secondary/90 transition-all shadow-lg hover:shadow-xl"
-            >
-              Enroll Now
-              <ChevronRight size={20} />
-            </Link>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </>
-  )
+    <section className="parent-section section">
+      <div className="wrap parent-grid">
+        <div><span className="eyebrow">For parents</span><h2>A choice you can feel <em>good about.</em></h2><p>Choosing an Islamic education is choosing who helps shape your child. We take that trust seriously.</p></div>
+        <div className="parent-points"><article><b>01</b><h3>Clear progression</h3><p>Structured pathways help students build strong foundations before moving forward.</p></article><article><b>02</b><h3>Character-led</h3><p>Adab, responsibility and compassion are part of the lesson—not an afterthought.</p></article><article><b>03</b><h3>Local & connected</h3><p>A welcoming Ilford community where young Muslims learn and grow together.</p></article><article><b>04</b><h3>Easy to start</h3><p>Tell us about your child and our team will guide you to the right course.</p></article></div>
+      </div>
+    </section>
+    <CtaBand />
+  </>;
 }
