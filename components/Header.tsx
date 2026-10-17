@@ -13,8 +13,8 @@ export function Header() {
     <header className="site-header">
       <div className="nav-shell">
         <Link href="/" className="brand" aria-label="Tarbiyah Academy home">
-          <Image src="/tarbiya-logo.jpg" width={64} height={64} alt="Tarbiyah Academy logo" priority />
-          <span><strong>Tarbiyah</strong><small>Academy · Ilford</small></span>
+          <div className="brand-logo"><Image src="/tarbiya-logo.jpg" width={76} height={76} alt="Tarbiyah Academy logo" priority /></div>
+          <span><strong>Tarbiyah Academy</strong><small>Faith · Knowledge · Character</small></span>
         </Link>
         <nav className="desktop-nav" aria-label="Main navigation">
           {links.map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}

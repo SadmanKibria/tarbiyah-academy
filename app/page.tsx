@@ -10,6 +10,7 @@ export default function HomePage() {
       <div className="hero-wash" />
       <div className="wrap hero-content">
         <div className="hero-copy">
+          <div className="hero-brand-mark" aria-hidden="true"><span>✦</span> Growing minds. Grounded hearts.</div>
           <span className="eyebrow light">Qur’an · Knowledge · Character</span>
           <h1>More than lessons.<br /><em>A foundation for life.</em></h1>
           <p>Helping children and young people grow in faith, confidence and character—in a place where they feel they belong.</p>
@@ -54,7 +55,7 @@ export default function HomePage() {
 
     <section className="parent-section section">
       <div className="wrap parent-grid">
-        <div><span className="eyebrow">For parents</span><h2>A choice you can feel <em>good about.</em></h2><p>Choosing an Islamic education is choosing who helps shape your child. We take that trust seriously.</p></div>
+        <div className="parent-intro"><span className="eyebrow">For parents</span><h2>A choice you can feel <em>good about.</em></h2><p>Choosing an Islamic education is choosing who helps shape your child. We take that trust seriously.</p><div className="parent-badge"><span>✦</span><strong>Rooted in Islam.<br />Made for today.</strong></div></div>
         <div className="parent-points"><article><b>01</b><h3>Clear progression</h3><p>Structured pathways help students build strong foundations before moving forward.</p></article><article><b>02</b><h3>Character-led</h3><p>Adab, responsibility and compassion are part of the lesson—not an afterthought.</p></article><article><b>03</b><h3>Local & connected</h3><p>A welcoming Ilford community where young Muslims learn and grow together.</p></article><article><b>04</b><h3>Easy to start</h3><p>Tell us about your child and our team will guide you to the right course.</p></article></div>
       </div>
     </section>
